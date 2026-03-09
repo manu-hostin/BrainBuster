@@ -61,10 +61,7 @@ function mostrarPergunta (){
 function verificar(resposta) {
     if (resposta === 'certa') {
         pontuacao = pontuacao + 1; // Soma 1 ponto
-        alert("Você ACERTOU! Pontuação atual: " + pontuacao);
-    } else {
-        alert("Você ERROU! Pontuação atual: " + pontuacao);
-    }
+    } 
 
     indice = indice + 1;
     if (indice < 5){
