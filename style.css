@@ -1,0 +1,59 @@
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-color: #1a1a1a;
+    --text-muted: #666666;
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --correct: #22c55e;
+    --wrong: #ef4444;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #111827;
+    --card-bg: #1f2937;
+    --text-color: #f9fafb;
+    --text-muted: #9ca3af;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
+
+body { background-color: var(--bg-color); color: var(--text-color); display: flex; flex-direction: column; min-height: 100vh; }
+
+.header { display: flex; justify-content: space-between; padding: 20px 40px; background-color: var(--card-bg); box-shadow: var(--shadow); }
+.header h1 { font-size: 1.5rem; color: var(--primary); }
+.btn-icon { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+.container { flex: 1; display: flex; justify-content: center; align-items: center; padding: 20px; }
+
+.quiz-card { background-color: var(--card-bg); width: 100%; max-width: 600px; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); text-align: center; }
+
+/* Controle de Telas */
+.screen { display: none; flex-direction: column; gap: 20px; }
+.screen.active { display: flex; }
+.hidden { display: none !important; }
+
+/* Textos */
+.quiz-card h2 { font-size: 1.5rem; margin-bottom: 10px; }
+.quiz-card p { color: var(--text-muted); margin-bottom: 20px; }
+.score-highlight { font-size: 4rem; color: var(--primary); margin: 20px 0; }
+
+.quiz-header { display: flex; justify-content: space-between; font-weight: 600; color: var(--text-muted); margin-bottom: 20px; border-bottom: 2px solid var(--bg-color); padding-bottom: 10px; }
+
+/* Botões de Resposta */
+.answers-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+
+.btn-answer { background-color: var(--bg-color); color: var(--text-color); border: 2px solid transparent; padding: 15px; border-radius: 8px; font-size: 1rem; cursor: pointer; text-align: left; transition: all 0.2s; }
+.btn-answer:hover:not(:disabled) { background-color: #e2e8f0; border-color: var(--primary); }
+[data-theme="dark"] .btn-answer:hover:not(:disabled) { background-color: #374151; }
+
+/* Classes dinâmicas para o JS injetar */
+.btn-answer.correct { background-color: var(--correct) !important; color: white !important; border-color: var(--correct); }
+.btn-answer.wrong { background-color: var(--wrong) !important; color: white !important; border-color: var(--wrong); }
+.btn-answer:disabled { cursor: not-allowed; opacity: 0.7; }
+
+/* Botões Primários (Começar, Próxima) */
+.btn-primary { background-color: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; }
+.btn-primary:hover { background-color: var(--primary-hover); }

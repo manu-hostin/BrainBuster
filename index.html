@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBuster Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>🧠 BrainBuster</h1>
+        <button id="theme-toggle" class="btn-icon">🌓</button>
+    </header>
+
+    <main class="container">
+        <div class="quiz-card">
+            
+            <div id="start-screen" class="screen active">
+                <h2>Pronto para testar seus conhecimentos?</h2>
+                <p>Responda 5 perguntas aleatórias e veja sua pontuação.</p>
+                <button id="start-btn" class="btn-primary">Começar Quiz</button>
+            </div>
+
+            <div id="quiz-screen" class="screen hidden">
+                <div class="quiz-header">
+                    <span id="question-counter">Pergunta 1/5</span>
+                    <span id="score-display">Pontos: 0</span>
+                </div>
+                
+                <h2 id="question-text">Carregando pergunta...</h2>
+                
+                <div id="answer-buttons" class="answers-grid">
+                    </div>
+
+                <button id="next-btn" class="btn-primary hidden">Próxima Pergunta</button>
+            </div>
+
+            <div id="end-screen" class="screen hidden">
+                <h2>Fim de Jogo!</h2>
+                <p>Sua pontuação final foi:</p>
+                <h1 id="final-score" class="score-highlight">0/5</h1>
+                <button id="restart-btn" class="btn-primary">Jogar Novamente</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
